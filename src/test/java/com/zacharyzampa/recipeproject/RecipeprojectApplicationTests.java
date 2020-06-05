@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class RecipeprojectApplicationTests {
 
-    @Test
+    @Test  // this is an integration test
     void contextLoads() {
     }
 
