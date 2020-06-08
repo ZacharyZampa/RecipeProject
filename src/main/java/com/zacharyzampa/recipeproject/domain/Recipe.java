@@ -34,7 +34,7 @@ public class Recipe {
     private Set<Ingredient> ingredients = new HashSet<>();
 
     @Lob
-    private Byte[] image;
+    private Byte[] image;  // The Hibernate team recommends use of the Wrapper of Byte as it can be null
 
     @OneToOne(cascade = CascadeType.ALL)  // use Cascade since if recipe is delete Note should be as well
     private Notes notes;

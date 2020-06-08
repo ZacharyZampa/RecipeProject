@@ -1,6 +1,5 @@
 package com.zacharyzampa.recipeproject.converters;
 
-
 import com.zacharyzampa.recipeproject.commands.RecipeCommand;
 import com.zacharyzampa.recipeproject.domain.Category;
 import com.zacharyzampa.recipeproject.domain.Recipe;
@@ -9,10 +8,8 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
-
 @Component
 public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand>{
-
     private final CategoryToCategoryCommand categoryConveter;
     private final IngredientToIngredientCommand ingredientConverter;
     private final NotesToNotesCommand notesConverter;
@@ -42,6 +39,7 @@ public class RecipeToRecipeCommand implements Converter<Recipe, RecipeCommand>{
         command.setServings(source.getServings());
         command.setSource(source.getSource());
         command.setUrl(source.getUrl());
+        command.setImage(source.getImage());
         command.setNotes(notesConverter.convert(source.getNotes()));
 
         if (source.getCategories() != null && source.getCategories().size() > 0){
